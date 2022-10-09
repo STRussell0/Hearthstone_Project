@@ -5,7 +5,7 @@ const options = {
 		'X-RapidAPI-Host': 'omgvamp-hearthstone-v1.p.rapidapi.com'
 	}
 };
-const base_url = "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/%7BYsera%7D";
+const base_url = "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/";
 const nameInput = document.getElementById('nameInput');
 const button = document.getElementById("button");
 let cardName = "";
@@ -18,7 +18,7 @@ button.addEventListener('click', function () {
 })
 
 function getCard () {
-    fetch(base_url, options)
+    fetch(base_url + cardName, options)
         .then(response => response.json())
         .then(response => console.log(response))
         .catch(err => console.error(err));
